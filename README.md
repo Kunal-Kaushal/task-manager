@@ -46,17 +46,17 @@ npm run dev
 
 ## Assumptions & Tradeoffs
 
-- Single JWT with 24h expiry (no refresh tokens — keeps it simple)
-- No email verification on register
-- No drag-and-drop — dropdown to change stage is simpler and accessible
-- CORS allows all origins (fine for demo)
-- Render free tier has ~30s cold starts after inactivity
-- Tasks capped at 100 per user (no pagination needed for this scale)
+- Single JWT with 24h expiry, no refresh tokens. Simpler for a demo but I'd add them in production
+- Registration doesn't verify email since this is just a demo
+- Used a dropdown to change task stage instead of drag-and-drop — quicker to implement and works better on mobile
+- CORS allows all origins for now, would lock it down in production
+- Render free tier spins down after inactivity so the first request takes ~30s
+- Capped tasks at 100 per user to skip pagination
 
 ## Decisions
 
-- FastAPI for async + auto OpenAPI docs
-- pwdlib (bcrypt) over passlib — passlib is unmaintained
-- Motor for async MongoDB — natural fit with FastAPI
-- Tailwind v4 with Vite plugin — no config file needed
-- Kanban columns on desktop, stacked cards on mobile
+- Went with FastAPI because it's async by default and gives me free API docs at `/docs`
+- Chose pwdlib over passlib for password hashing — passlib hasn't been updated since 2020
+- Motor as the MongoDB driver since it's async and works well with FastAPI
+- Tailwind v4 with the Vite plugin so I don't need a config file
+- Kanban-style board with 3 columns on desktop, stacks on mobile
