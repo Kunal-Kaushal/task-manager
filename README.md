@@ -4,8 +4,8 @@ A task management app with three stages: Todo, In Progress, Done.
 
 ## Live Links
 
-- **Frontend:** [Vercel](https://your-app.vercel.app) _(update after deploy)_
-- **Backend:** [Render](https://your-app.onrender.com) _(update after deploy)_
+- **Frontend:** [Vercel](https://task-manager-rouge-two-24.vercel.app)
+- **Backend:** [Render](https://task-manager-s8c3.onrender.com)
 
 ## Tech Stack
 
